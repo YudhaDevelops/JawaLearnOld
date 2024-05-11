@@ -1,0 +1,25 @@
+.identitas{
+    font-size:30px;
+}
+
+.garis_sendiri{
+    size: 5px;
+    margin: 0em 0px;
+    margin-bottom: 0px;
+    border: none;
+    border-radius: 3px;
+    background: linear-gradient(to right,
+        rgb(255, 108, 108), 
+        rgb(255, 189, 69), 
+        rgb(61, 213, 109), 
+        rgb(61, 157, 243), 
+        rgb(154, 93, 255));
+    height: 2px !important;
+}
+
+.hasil_predict{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
