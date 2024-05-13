@@ -45,7 +45,19 @@ frame_placeholder = st.empty()
 video_running = False
 
 # Fungsi untuk mengambil frame dari video ==========================================
-def capture_video(camera_option):
+# def capture_video(camera_option):
+    
+
+# Ketika tombol "Start" diklik ===================================================
+if start_button:
+    # Mengganti status video_running menjadi True
+    video_running = True
+    
+    # Menyembunyikan tombol "Start"
+    start_button = False
+    
+    # Memanggil fungsi capture_video
+    # capture_video(camera_option)
     if camera_option == "Camera 1":
         camera_option = 0
     elif camera_option == "Camera 2":
@@ -56,16 +68,17 @@ def capture_video(camera_option):
         camera_option = 3
         
     cap = cv2.VideoCapture(camera_option)
-    global video_running
+    # global video_running
 
     if camera_option == None:
         time.sleep(.5)
         msg = st.toast("Anda belum memilih kamera")
-        return
+        # return
+    
     if not cap.isOpened():
         time.sleep(.5)
         msg = st.toast("Kamera tidak tersedia. Silakan pilih kamera lain atau periksa koneksi kamera Anda.")
-        return
+        # return
     
     # Menampilkan tombol "Stop"
     stop_button = st.button("Stop")
@@ -87,17 +100,6 @@ def capture_video(camera_option):
 
     cap.release()
     cv2.destroyAllWindows()
-
-# Ketika tombol "Start" diklik ===================================================
-if start_button:
-    # Mengganti status video_running menjadi True
-    video_running = True
-    
-    # Menyembunyikan tombol "Start"
-    start_button = False
-    
-    # Memanggil fungsi capture_video
-    capture_video(camera_option)
 
 # Ketika tombol "Stop" diklik ====================================================
 if st.session_state.get("stop_button", False):
