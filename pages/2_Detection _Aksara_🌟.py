@@ -79,14 +79,13 @@ def capture_video(camera_option):
         camera_option = 2
     elif camera_option == "Camera 4":
         camera_option = 3
-        
+    
+    if camera_option is None:  # Tambahkan pengecekan ini
+        return
+
     cap = cv2.VideoCapture(camera_option)
     global video_running
 
-    if camera_option == None:
-        time.sleep(.5)
-        msg = st.toast("Anda belum memilih kamera")
-        return
     if not cap.isOpened():
         time.sleep(.5)
         msg = st.toast("Kamera tidak tersedia. Silakan pilih kamera lain atau periksa koneksi kamera Anda.")
