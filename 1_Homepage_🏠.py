@@ -36,7 +36,7 @@ with col_fitur[0]:
                 'secara realtime dengan menggunakan camera yang tersedia, dengan fitur ini memberikan arti '
                 'pada aksara yang di letakan di depan kamera'
                 '</div>', unsafe_allow_html=True)
-    st.link_button("Try now :sparkles:", "/Detection_Aksara_🌟")
+    st.link_button("Coba Sekarang :sparkles:", "/Detection_Aksara_🌟")
     
 with col_fitur[1]:
     "## Klasifikasi Aksara"
@@ -44,7 +44,7 @@ with col_fitur[1]:
                 'Firue ini dapat digunakan untuk melakukan transliterasi aksara Jawa LEGENA dengan deteksi '
                 'berdasarkan gambar tulisan aksara yang di masukkan baik daci kamera atau penyimpanan pada '
                 'device anda</div>',unsafe_allow_html=True)
-    st.link_button("Try now :sparkles:", "/Klasifikasi_Aksara_🎴")
+    st.link_button("Coba Sekarang :sparkles:", "/Klasifikasi_Aksara_🎴")
 
 
 st.header("", divider="rainbow")

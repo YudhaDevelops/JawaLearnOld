@@ -16,7 +16,6 @@ import os
 import argparse
 import sys
 import time
-from threading import Thread
 import importlib.util
 
 from streamlit_webrtc import (
@@ -31,8 +30,8 @@ RTC_CONFIGURATION = RTCConfiguration(
     {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
 )
 
-PATH_TO_MODEL = "./models/mobilenetV2.tflite"
-PATH_TO_LABELS = "./models/labels_legena.txt"
+PATH_TO_MODEL = "./models/detectObject/model.tflite"
+PATH_TO_LABELS = "./models/detectObject/labels.txt"
 @st.cache_resource
 def load_tf_lite_model():
     try:

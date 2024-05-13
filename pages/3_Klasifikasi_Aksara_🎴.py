@@ -84,7 +84,7 @@ def my_predict(uploaded_file, models):
         # klasifikasi gambar
         if len(models) > 0:
             for idx, model in enumerate(models):
-                model_path = load_my_model(model)
+                model_path = load_my_model(model)  
                 model_keras = load_model(model_path)
                 prediction = classify(image, model_keras, class_name)
                 index = np.argmax(prediction)
@@ -98,9 +98,16 @@ def my_predict(uploaded_file, models):
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert("RGB")
-    st.image(image, width=300)
     
-    pilih_model = st.multiselect('Pilih Model', options=['DenseNet121', 'EfficientNet', 'Inception', 'MobileNetV2', 'ResNet50', 'VGG16', 'Xception'])
+    col_tampil = st.columns(2)
+    with col_tampil[0]:
+        st.image(image, width=300)
+    with col_tampil[1]:
+        pilih_model = st.multiselect('Pilih Model', 
+                                     options=['DenseNet121', 'EfficientNet', 'Inception', 'MobileNetV2', 'ResNet50', 'VGG16', 'Xception'],
+                                     placeholder="Pilih model yang mau anda pakai"
+                                     )
+    
     st.markdown('<hr class="garis_sendiri"></hr>', unsafe_allow_html=True)
     pilih_model_lower = [model.lower() for model in pilih_model]
     arr_pred = my_predict(uploaded_file, pilih_model_lower)
