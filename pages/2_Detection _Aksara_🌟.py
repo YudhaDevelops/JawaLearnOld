@@ -1,5 +1,6 @@
 import cv2
 import streamlit as st
+import time
 
 # Set page config ==================================================
 st.set_page_config(
