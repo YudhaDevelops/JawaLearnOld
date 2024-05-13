@@ -1,25 +1,11 @@
 import cv2
 import streamlit as st
-import numpy as np
-import tempfile
-import time
-import os
-import argparse
-import sys
-import time
-from threading import Thread
-import importlib.util
 
 # Set page config ==================================================
 st.set_page_config(
     page_title="Detection Aksara",
     page_icon="🌟",
 )
-
-# Set css ===========================================================
-with open("./assets/style.css") as f:
-    css = f.read()
-st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 # Set header page ===================================================
 st.header("🌟 Detection Aksara :sparkles:", divider="rainbow")
@@ -44,10 +30,6 @@ frame_placeholder = st.empty()
 # Variabel untuk menyimpan status apakah video sedang berjalan atau tidak ==========
 video_running = False
 
-# Fungsi untuk mengambil frame dari video ==========================================
-# def capture_video(camera_option):
-    
-
 # Ketika tombol "Start" diklik ===================================================
 if start_button:
     # Mengganti status video_running menjadi True
@@ -56,8 +38,7 @@ if start_button:
     # Menyembunyikan tombol "Start"
     start_button = False
     
-    # Memanggil fungsi capture_video
-    # capture_video(camera_option)
+    # Mengubah pilihan kamera menjadi indeks numerik
     if camera_option == "Camera 1":
         camera_option = 0
     elif camera_option == "Camera 2":
@@ -68,22 +49,15 @@ if start_button:
         camera_option = 3
         
     cap = cv2.VideoCapture(camera_option)
-    # global video_running
 
     if camera_option == None:
         time.sleep(.5)
         msg = st.toast("Anda belum memilih kamera")
-        # return
     
     if not cap.isOpened():
         time.sleep(.5)
         msg = st.toast("Kamera tidak tersedia. Silakan pilih kamera lain atau periksa koneksi kamera Anda.")
-        # return
     
-    # Menampilkan tombol "Stop"
-    stop_button = st.button("Stop")
-    
-    st.markdown('<hr class="garis_sendiri"></hr>', unsafe_allow_html=True)
     while cap.isOpened() and video_running:
         ret, frame = cap.read()
 
@@ -101,8 +75,3 @@ if start_button:
     cap.release()
     cv2.destroyAllWindows()
 
-# Ketika tombol "Stop" diklik ====================================================
-if st.session_state.get("stop_button", False):
-    # Mengganti status video_running menjadi False
-    video_running = False
-    
