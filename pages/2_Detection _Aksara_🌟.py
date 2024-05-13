@@ -53,11 +53,11 @@ if start_button:
 
     if camera_option == None:
         time.sleep(.5)
-        msg = st.toast("Anda belum memilih kamera")
+        msg = st.error("Anda belum memilih kamera")
     
     if not cap.isOpened():
         time.sleep(.5)
-        msg = st.toast("Kamera tidak tersedia. Silakan pilih kamera lain atau periksa koneksi kamera Anda.")
+        msg = st.error("Kamera tidak tersedia. Silakan pilih kamera lain atau periksa koneksi kamera Anda.")
     
     while cap.isOpened() and video_running:
         ret, frame = cap.read()
@@ -75,4 +75,3 @@ if start_button:
 
     cap.release()
     cv2.destroyAllWindows()
-
