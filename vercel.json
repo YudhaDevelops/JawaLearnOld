@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "./1_Homepage_🏠.py", 
+            "use": "@vercel/python",
+            "config": {
+                "python": "3.9.19"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)", 
+            "dest": "1_Homepage_🏠.py"
+        }
+    ]
+}
