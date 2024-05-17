@@ -1,6 +1,6 @@
 <h2> Hi, I'm Yudha! <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="50"></h2>
 <hr class="garis_sendiri"></hr>
-<p><em>I am a student from one of <a href="#">the Universities in Yogyakarta</a><img src="https://media.giphy.com/media/fYSnHlufseco8Fh93Z/giphy.gif" width="30">
+<p><em>I'm a student from one of the <a href="#">Universities at Yogyakarta</a><img src="https://media.giphy.com/media/fYSnHlufseco8Fh93Z/giphy.gif" width="30">
   </br>Back-End Web Developer from <a href="#">Lampung</a>
   <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> 
 </em> </p>
@@ -16,7 +16,7 @@
 [![Chrome Badge](https://img.shields.io/badge/-Examp.WebApp.com-EB1D36?style=flat&logo=Google-Chrome&logoColor=whitee&link=https://statis-web02.000webhostapp.com/)](https://statis-web02.000webhostapp.com/)
 [![Chrome Badge](https://img.shields.io/badge/-Data.Pegawai.com-EB1D36?style=flat&logo=Google-Chrome&logoColor=whitee&link=[https://statis-web02.000webhostapp.com/](https://happyngoding02.000webhostapp.com/))]([https://statis-web02.000webhostapp.com/](https://happyngoding02.000webhostapp.com/))
 
-I am a versatilist and easily adapt to different topic (Back-End Web Developer, a little Front-End Developer 🌐, beginner level Designer 🎨) depending on what the project requires. I love exploring new tech stack 💻 and leveraging them to build cool stuffs 🛠️
+I'm easily adapt to different topic about Back-End Web Developer, a little Front-End Developer 🌐, beginner level Designer 🎨 depending on what the project requires. I love exploring something new about technology 💻 and use them to build a cool stuffs 🛠️
 <br/>
 <br/>
 
@@ -25,11 +25,11 @@ I am a versatilist and easily adapt to different topic (Back-End Web Developer, 
   
 ### 🧐 More About Me:
 
-- 🔭 &nbsp; I'm currently focusing on studying at **USD University**
-- 🤝 &nbsp; I can collaborate with you on Back-End Develop
-- 🌱 &nbsp; I’m currently learning Java, Laravel, Python; 
+- 🔭 &nbsp; I'm currently focus on studying at **USD University**
+- 🤝 &nbsp; I can collaborate with you on Back-End Developer
+- 🌱 &nbsp; I'm currently learning about Java, Laravel, and Python 
 - 👨🏻‍💻 &nbsp; Most of my projects are available on [Github](https://github.com/boim212?tab=repositories)
-- 💬 &nbsp; Ask me about anything tech related, I am happy to help;
+- 💬 &nbsp; Ask me anything about technology, I'll help you
 - 📫 &nbsp; Feel free to ping me on [LinkedIn](https://www.linkedin.com/in/fx-bima-yudha-pratama-1117b5227) and bimaboim10@gmail.com 
 <!-- - 📝 &nbsp; Checkout my [resume](https://drive.google.com/file/d/1ZpR5pVBTnl_Qybq7GE3MGy1SB1JehVSE/view?usp=sharing) -->
 <!-- - 📚 &nbsp; When I am free, I read fantasy and fiction novels. Checkout my [Goodreads](https://www.goodreads.com/rahul-jha98) to see the book I have read -->
