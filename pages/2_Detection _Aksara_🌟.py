@@ -86,3 +86,5 @@ def live():
         async_processing=True,
         video_processor_factory=lambda: VideoProcessorFactory(fps=60)
     )
+
+live
