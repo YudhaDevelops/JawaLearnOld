@@ -183,3 +183,5 @@ def realtime_video_detection():
     if ctx.video_transformer:
         info.markdown("Click on :blue['SNAPSHOT'] to take a picture")
         snap = st.button("SNAPSHOT")
+        
+realtime_video_detection()
