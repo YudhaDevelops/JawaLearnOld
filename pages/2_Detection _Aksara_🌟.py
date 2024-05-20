@@ -1,10 +1,6 @@
 import cv2
 import streamlit as st
 import numpy as np
-import tempfile
-import time
-import os
-import argparse
 import sys
 import time
 from threading import Thread
@@ -13,7 +9,7 @@ import tensorflow as tf
 
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer, WebRtcMode, VideoProcessorFactory
 
-import turn
+import helper.objek_deteksi as objek_deteksi
 
 # Set page config ==================================================
 st.set_page_config(
@@ -36,4 +32,4 @@ resW, resH = 640,480
 imW, imH = int(resW), int(resH)
 min_conf_threshold = 0.5
 
-realtime_video_detection()
+# realtime_video_detection()
