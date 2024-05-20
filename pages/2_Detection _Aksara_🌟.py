@@ -87,4 +87,5 @@ def live():
         video_processor_factory=lambda: VideoProcessorFactory(fps=60)
     )
 
-live
+if __name__ == "__main__":
+    live()
