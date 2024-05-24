@@ -16,7 +16,7 @@ with col_deskripsi[0]:
                 'Merupakan aplikasi yang dibangun dengan menggunakan pembelajaran mesin yaitu CNN (Convolutional Neural Network), '
                 'serta menggunakan data gambar sebagai alat belajar si mesin. Dengan melatih mesin yang berbeda '
                 'diharapkan dapat membantu anda dalam memahami bentuk aksara Jawa. \n'
-                'Aplikasi ini adalah hasil dari riset saya yang berjudul <b>PENERAPAN TEKNOLOGI AUGMENTED REALITY MENGGUNAKAN CNN (CONVOLUTIONAL NEURAL NETWORK) DALAM PEMBELAJARAN AKSARA JAWA</b>'
+                'Aplikasi ini adalah hasil dari riset saya yang berjudul <b>PENERAPAN TEKNOLOGI AUGMENTED REALITY MENGGUNAKAN CNN <i>(CONVOLUTIONAL NEURAL NETWORK)</i> DALAM PEMBELAJARAN AKSARA JAWA</b>'
                 '</div>', unsafe_allow_html=True)
 
     "## Tujuan Dibangun nya Aplikasi"
