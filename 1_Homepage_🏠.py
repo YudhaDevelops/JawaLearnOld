@@ -16,7 +16,7 @@ with col_deskripsi[0]:
                 'Merupakan aplikasi yang dibangun dengan menggunakan pembelajaran mesin yaitu CNN (Convolutional Neural Network), '
                 'serta menggunakan data gambar sebagai alat belajar si mesin. Dengan melatih mesin yang berbeda '
                 'diharapkan dapat membantu anda dalam memahami bentuk aksara Jawa. \n'
-                'Aplikasi ini adalah hasil dari riset saya yang berjudul PENERAPAN TEKNOLOGI AUGMENTED REALITY MENGGUNAKAN CNN (CONVOLUTIONAL NEURAL NETWORK) DALAM PEMBELAJARAN AKSARA JAWA'
+                'Aplikasi ini adalah hasil dari riset saya yang berjudul <b>PENERAPAN TEKNOLOGI AUGMENTED REALITY MENGGUNAKAN CNN (CONVOLUTIONAL NEURAL NETWORK) DALAM PEMBELAJARAN AKSARA JAWA</b>'
                 '</div>', unsafe_allow_html=True)
 
     "## Tujuan Dibangun nya Aplikasi"
@@ -30,18 +30,18 @@ with col_deskripsi[0]:
     "## Fitur-Fitur Aplikasi JawaLearn\n"
 
 with col_fitur[0]:
-    "## Detection Aksara"
+    "## Scan AR Aksara"
     st.markdown('<div style="text-align: justify;">'
                 'Fitur ini dapat digunakan untuk melakukan translitrasi aksara Jawa LEGENA dengan deteksi '
                 'secara realtime dengan menggunakan camera yang tersedia, dengan fitur ini memberikan arti '
                 'pada aksara yang di letakan di depan kamera'
                 '</div>', unsafe_allow_html=True)
-    st.link_button("Coba Sekarang :sparkles:", "/Detection_Aksara_🌟")
+    st.link_button("Coba Sekarang :sparkles:", "/Scan_AR_Aksara_🌟")
     
 with col_fitur[1]:
     "## Klasifikasi Aksara"
     st.markdown('<div style="text-align: justify;">'
-                'fitur ini dapat digunakan untuk melakukan transliterasi aksara Jawa LEGENA dengan deteksi '
+                'Fitur ini dapat digunakan untuk melakukan transliterasi aksara Jawa LEGENA dengan deteksi '
                 'berdasarkan gambar tulisan aksara yang di masukkan baik daci kamera atau penyimpanan pada '
                 'device anda</div>',unsafe_allow_html=True)
     st.link_button("Coba Sekarang :sparkles:", "/Klasifikasi_Aksara_🎴")
