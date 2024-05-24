@@ -1,21 +1,24 @@
 import logging
 import os
-
+from dotenv import load_dotenv
 import streamlit as st
 from twilio.base.exceptions import TwilioRestException
 from twilio.rest import Client
 
+# Muat variabel lingkungan dari file .env
+load_dotenv()
+
 logger = logging.getLogger(__name__)
 
-
 def get_ice_servers():
-    """
-        Use Twilio's TURN server because Streamlit Community Cloud has changed its infrastructure and WebRTC connection cannot be established without TURN server now.  # noqa: E501
-    """
+    """Gunakan server TURN Twilio karena Streamlit Community Cloud telah mengubah
+    infrastrukturnya dan koneksi WebRTC tidak bisa terhubung tanpa server TURN sekarang."""
 
     try:
-        account_sid = st.secrets["TWILIO_ACCOUNT_SID"]
-        auth_token = st.secrets["TWILIO_AUTH_TOKEN"]
+        account_sid = os.getenv("TWILIO_ACCOUNT_SID")
+        auth_token = os.getenv("TWILIO_AUTH_TOKEN")
+        if not account_sid or not auth_token:
+            raise KeyError("Twilio credentials are missing")
     except KeyError:
         logger.warning(
             "Twilio credentials are not set. Fallback to a free STUN server from Google."
