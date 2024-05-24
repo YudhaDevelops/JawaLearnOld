@@ -13,7 +13,7 @@ col_fitur = st.columns(2)
 with col_deskripsi[0]:
     "## Aplikasi JawaLearn"
     st.markdown('<div style="text-align: justify;">'
-                'Merupakan aplikasi yang dibangun dengan menggunakan pembelajaran mesin yaitu CNN (Convolutional Neural Network), '
+                'Merupakan aplikasi yang dibangun dengan menggunakan pembelajaran mesin yaitu CNN <i>(Convolutional Neural Network)</i>, '
                 'serta menggunakan data gambar sebagai alat belajar si mesin. Dengan melatih mesin yang berbeda '
                 'diharapkan dapat membantu anda dalam memahami bentuk aksara Jawa. \n'
                 'Aplikasi ini adalah hasil dari riset saya yang berjudul <b>PENERAPAN TEKNOLOGI AUGMENTED REALITY MENGGUNAKAN CNN <i>(CONVOLUTIONAL NEURAL NETWORK)</i> DALAM PEMBELAJARAN AKSARA JAWA</b>'

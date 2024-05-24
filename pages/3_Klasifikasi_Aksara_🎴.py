@@ -60,13 +60,36 @@ with open("./models/label_best_model2.txt", "r") as f:
     f.close()
 
 
+# def load_my_model(name):
+#     path_model = "./models/modelA"
+#     model_files = [file for file in os.listdir(path_model) if file.endswith(".h5")]
+#     for file in model_files:
+#         if name in file:
+#             model_path = os.path.join(path_model, file)
+#             try:
+#                 model_keras = load_model(model_path)
+#                 return model_keras
+#             except Exception as e:
+#                 st.error(f"Error loading model {model_path}: {e}")
+#                 return None
+#     st.error(f"Model {name} not found.")
+#     return None
+
 def load_my_model(name):
     path_model = "./models/modelA"
     model_files = [file for file in os.listdir(path_model) if file.endswith(".h5")]
+    st.write(f"Model files found: {model_files}")
     for file in model_files:
         if name in file:
             model_path = os.path.join(path_model, file)
-            return model_path
+            st.write(f"Loading model from {model_path}")
+            try:
+                model_keras = load_model(model_path)
+                return model_keras
+            except Exception as e:
+                st.error(f"Error loading model {model_path}: {e}")
+                return None
+    st.error(f"Model {name} not found.")
     return None
 
 
