@@ -109,13 +109,14 @@ class VideoTransformer(VideoTransformerBase):
         scores = interpreter.get_tensor(output_details[0]["index"])[0]
 
         for i in range(len(scores)):
-            if (scores[i] > 0.3) and (scores[i] <= 1.0):
+            if (scores[i] > self.confidence_threshold) and (scores[i] <= 1.0):
                 ymin = int(max(1, (boxes[i][0] * imH)))
                 xmin = int(max(1, (boxes[i][1] * imW)))
                 ymax = int(min(imH, (boxes[i][2] * imH)))
                 xmax = int(min(imW, (boxes[i][3] * imW)))
 
-                cv2.rectangle(out_image, (xmin, ymin), (xmax, ymax), (10, 255, 0), 2)
+                if self.tampil_ar == True:
+                    cv2.rectangle(out_image, (xmin, ymin), (xmax, ymax), (10, 255, 0), 2)
 
                 # Draw label
                 object_name = labels[int(classes[i])]
@@ -131,33 +132,51 @@ class VideoTransformer(VideoTransformerBase):
 
                 label_ymin = max(ymin, labelSize[1] + 10)
 
-                cv2.rectangle(
-                    out_image,
-                    (xmin, label_ymin - labelSize[1] - 10),
-                    (xmin + labelSize[0], label_ymin + baseLine - 10),
-                    (255, 255, 255),
-                    cv2.FILLED,
-                )
-
-                cv2.putText(
-                    out_image,
-                    label,
-                    (xmin, label_ymin - 7),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.7,
-                    (0, 0, 0),
-                    2,
-                )
+                if self.tampil_ar == True:
+                    cv2.rectangle(
+                        out_image,
+                        (xmin, label_ymin - labelSize[1] - 10),
+                        (xmin + labelSize[0], label_ymin + baseLine - 10),
+                        (255, 255, 255),
+                        cv2.FILLED,
+                    )
+                
+                    cv2.putText(
+                        out_image,
+                        label,
+                        (xmin, label_ymin - 7),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        0.7,
+                        (0, 0, 0),
+                        2,
+                    )
 
                 with self.frame_lock:
                     self.out_image = out_image
 
         return out_image
 
+def slider(initial_value=0.3):
+    confidence_threshold = st.slider("Score threshold", 0.0, 1.0, initial_value, 0.05)
+    return confidence_threshold
 
+    
 def realtime_video_detection():
     info = st.empty()
-    info.markdown("First, click on :blue['START'] to use webcam")
+    info.markdown("Pertama, klik :blue['SELECT DEVICE'] untuk mengganti kamera," + 
+                  "kemudian klik :blue['DONE'] untuk memilih kamera dan klik :blue['START'] "+
+                  "untuk memulai memainkan AR Aksara")
+    
+    st.markdown('<div style="text-align: justify;">'
+                'Jika ingin mencoba dengan marker yang saya sediakan bisa '
+                'kunjungi link berikut <a href="https://drive.google.com/drive/folders/1drLuj-3zQ9JYgbofkFcEvrt8esD_1kA3?usp=sharing">Marker AR Jawa Learn</a>', unsafe_allow_html=True)
+    
+    st.markdown('<hr class="garis_sendiri"></hr>', unsafe_allow_html=True)
+    
+    # Buat slider dan tentukan event handler
+    # confidence_threshold = st.slider("Score threshold", 0.0, 1.0, 0.5, 0.05, key="confidence_threshold")
+    
+    # Membuat webrtc_streamer dengan video_transformer yang sudah dibuat
     ctx = webrtc_streamer(
         key="object detection",
         mode=WebRtcMode.SENDRECV,
@@ -168,19 +187,11 @@ def realtime_video_detection():
     )
 
     if ctx.video_transformer:
-        info.markdown("Click on :blue['SNAPSHOT'] to take a picture")
-        snap = st.button("SNAPSHOT")
-        if snap:
-            with ctx.video_transformer.frame_lock:
-                out_image = ctx.video_transformer.out_image
-
-            if out_image is not None:
-                st.write("Result:")
-                st.image(out_image, channels="BGR")
-                public_url = upload_image(out_image)
-                st.markdown(
-                    f"<a href='{public_url}' download='hand-pose-recognition.jpg' style='display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; font-weight: 400; padding: 0.25rem 0.75rem; border-radius: 0.5rem; min-height: 38.4px; margin: 0px; line-height: 1.6; color: inherit; width: auto; user-select: none; background-color: rgb(19, 23, 32); border: 1px solid rgba(250, 250, 250, 0.2); text-decoration: none;'>Download Photo &#10515;</a>",
-                    unsafe_allow_html=True,
-                )
-            else:
-                st.warning("No frames available yet.")
+        tampil = st.checkbox("Tampilkan AR",value=True)
+        slider_value = slider()
+        st.write(f"Tingkat Kepercayaan Diri Dalam Memprediksi {slider_value}")
+        
+        ctx.video_transformer.tampil_ar = tampil
+        ctx.video_transformer.confidence_threshold = slider_value
+        # confidence_threshold = st.slider("Score threshold", 0.0, 1.0, 0.5, 0.05)
+        

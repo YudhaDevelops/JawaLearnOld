@@ -21,7 +21,6 @@ I'm easily adapt to different topic about Back-End Web Developer, a little Front
 <br/>
 
 <img align="right" alt="GIF" src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" width="300px"/>
-<img align="left" alt="ME" src="https://raw.githubusercontent.com/YudhaDevelops/YudhaDevelops/main/resources/img/me.png" width="300px"/>
   
 ### 🧐 More About Me:
 

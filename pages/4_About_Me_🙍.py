@@ -3,7 +3,7 @@ import glob
 import os
 
 st.set_page_config(
-    page_title="About Me",
+    page_title="About Me 🙍",
     page_icon="🙍",
 )
 with open("./assets/style.css") as f:

@@ -8,7 +8,7 @@ from streamlit_webrtc import VideoTransformerBase, webrtc_streamer, WebRtcMode, 
 
 # Set page config ==================================================
 st.set_page_config(
-    page_title="Detection Aksara",
+    page_title="Scan AR Aksara",
     page_icon="🌟",
 )
 
@@ -18,7 +18,7 @@ with open("./assets/style.css") as f:
 st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 # Set header page ===================================================
-st.header("🌟 Detection Aksara :sparkles:", divider="rainbow")
+st.header("🌟 Scan AR Aksara :sparkles:", divider="rainbow")
 
 # Deteksi ===========================================================
 from helper.objek_deteksi import realtime_video_detection

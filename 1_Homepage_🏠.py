@@ -27,7 +27,7 @@ with col_deskripsi[0]:
                    "4. Memberikan kontribusi dalam mengatasi kesulitan siswa dalam mempelajari aksara Jawa menggunakan teknologi Augmented Reality\n")
     st.markdown(tujuan_text, unsafe_allow_html=True)
 
-    "## Fitur-Fitur Aplikasi JawaLearn\n"
+    "## Fitur Aplikasi JawaLearn\n"
 
 with col_fitur[0]:
     "## Scan AR Aksara"
@@ -38,13 +38,13 @@ with col_fitur[0]:
                 '</div>', unsafe_allow_html=True)
     st.link_button("Coba Sekarang :sparkles:", "/Scan_AR_Aksara_🌟")
     
-with col_fitur[1]:
-    "## Klasifikasi Aksara"
-    st.markdown('<div style="text-align: justify;">'
-                'Fitur ini dapat digunakan untuk melakukan transliterasi aksara Jawa LEGENA dengan deteksi '
-                'berdasarkan gambar tulisan aksara yang di masukkan baik daci kamera atau penyimpanan pada '
-                'device anda</div>',unsafe_allow_html=True)
-    st.link_button("Coba Sekarang :sparkles:", "/Klasifikasi_Aksara_🎴")
+# with col_fitur[1]:
+#     "## Klasifikasi Aksara"
+#     st.markdown('<div style="text-align: justify;">'
+#                 'Fitur ini dapat digunakan untuk melakukan transliterasi aksara Jawa LEGENA dengan deteksi '
+#                 'berdasarkan gambar tulisan aksara yang di masukkan baik daci kamera atau penyimpanan pada '
+#                 'device anda</div>',unsafe_allow_html=True)
+#     st.link_button("Coba Sekarang :sparkles:", "/Klasifikasi_Aksara_🎴")
 
 
 st.header("", divider="rainbow")

@@ -21,11 +21,45 @@ ResNet50 = False
 VGG16 = False
 Xception = False
 
-
 st.set_page_config(
     page_title="Predict Aksara",
     page_icon="🎴",
 )
+
+def load_model_desenet():
+    path = "./models/modelA/model_densenet121_20eph.h5"
+    model = load_model(path)
+    return model
+
+def load_model_efficient():
+    path = "./models/modelA/model_efficientnet_20eph.h5"
+    model = load_model(path)
+    return model
+
+def load_model_inception():
+    path = "./models/modelA/model_inception_20eph.h5"
+    model = load_model(path)
+    return model
+
+def load_model_mobilenet():
+    path = "./models/modelA/model_mobilenetv2_20eph.h5"
+    model = load_model(path)
+    return model
+
+def load_model_restnet():
+    path = "./models/modelA/model_resnet50_20eph.h5"
+    model = load_model(path)
+    return model
+
+def load_model_vgg():
+    path = "./models/modelA/model_vgg16_20eph.h5"
+    model = load_model(path)
+    return model
+
+def load_model_exception():
+    path = "./models/modelA/model_xception_20eph.h5"
+    model = load_model(path)
+    return model
 
 with open("./assets/style.css") as f:
     css = f.read()
@@ -60,16 +94,6 @@ with open("./models/label_best_model2.txt", "r") as f:
     f.close()
 
 
-def load_my_model(name):
-    path_model = "./models/modelA"
-    model_files = [file for file in os.listdir(path_model) if file.endswith(".h5")]
-    for file in model_files:
-        if name in file:
-            model_path = os.path.join(path_model, file)
-            return model_path
-    return None
-
-
 st.header("🎴 Predict Aksara :sparkles:", divider="rainbow")
 # upload file
 uploaded_file = st.file_uploader("Choose a file", type=["jpeg", "png", "jpg"])
@@ -84,8 +108,22 @@ def my_predict(uploaded_file, models):
         # klasifikasi gambar
         if len(models) > 0:
             for idx, model in enumerate(models):
-                model_path = load_my_model(model)  
-                model_keras = load_model(model_path)
+                if model == 'densenet121':
+                    model_keras = load_model_desenet()
+                if model == 'efficientnet':
+                    model_keras = load_model_efficient()
+                if model == 'inception':
+                    model_keras = load_model_inception()
+                if model == 'resnet50':
+                    model_keras = load_model_restnet()
+                if model == 'vgg16':
+                    model_keras = load_model_vgg()
+                if model == 'mobilenetv2':
+                    model_keras = load_model_mobilenet()
+                if model == 'xception':
+                    model_keras = load_model_exception()
+                # model_path = load_my_model(model)  
+                # model_keras = load_model(model_path)
                 prediction = classify(image, model_keras, class_name)
                 index = np.argmax(prediction)
                 predict_class = class_name[index]
